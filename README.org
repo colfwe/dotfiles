@@ -1,0 +1,140 @@
+* 安装说明文档
+
+** 1. 安装效果
+
+[[file:dotfiles/res/screenshot/大致效果1.png]]
+
+[[file:dotfiles/res/screenshot/大致效果2.png]]
+
+[[file:dotfiles/res/screenshot/大致效果3.png]]
+
+[[file:dotfiles/res/screenshot/大致效果4.png]]
+
+** 2. 必要准备
+
+*** (1) 安装fcitx5
+首先安装fcitx5全家桶
+
+#+begin_src sh
+  sudo pacman -S fcitx5-im fcitx5-chinese-addons fcitx5-rime fcitx5-material-color
+#+end_src
+
+然后编辑本机环境文件
+#+begin_src sh
+  sudo vim /etc/environment
+  # 并添加下面内容
+  # + GTK_IM_MODULE=fcitx
+  # + QT_IM_MODULE=fcitx
+  # + XMODIFIERS=@im=fcitx
+  # + SDL_IM_MODULE=fcitx
+#+end_src
+
+然后在KDE下(如果您使用的也是KDE plasma 6的话)，依次点击 [系统设置] > [键盘] > [虚拟键盘] > [选择Fcitx5]
+
+*** (2) 打字体补丁
+首先点击这里 [[https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file#font-patcher][字体补丁]] 去下载作者提供的font-patcher字体脚本文件。
+
+同时在安装了 fontforge 后
+
+#+begin_src sh
+  sudo pacman -S fontforge
+#+end_src
+
+根据font-patcher字体脚本文件，对仓库里的Sauce字体打上补丁
+
+#+begin_src sh
+  fontforge --script ./font-patcher --complete 'Sauce Code Pro Semibold Nerd Font Complete Mono.ttf'  
+#+end_src
+
+然后安装字体
+#+begin_src sh
+  mkdir -p ~/.local/share/fonts/
+  mv SauceCodeProNerdFontCompleteMonoNerdFont-SemiBold.ttf ~/.local/share/fonts/
+  sudo fc-cache -f
+#+end_src
+
+*** (3) 安装工具
+**** I. bash PS1 Prompt提示符
+#+begin_src sh
+  # 配置文件
+  cp ~/.bash_profile ~/.bash_profile_backup
+  cp /bash/.bash_profile ~/.bash_profile
+#+end_src
+
+**** II. neovim安装
+#+begin_src sh
+  sudo pacman -S neovim
+
+  # 依赖安装
+  sudo pacman -S ripgrep  # 搜索文本基础工具
+  sudo pacman -S glow     # 在CLI下预览md文件
+
+  # 配置文件
+  mkdir -p ~/.config/nvim
+  cp -r /nvim/* ~/.config/nvim
+
+  # 然后等待安装
+  nvim 
+
+  # 安装主题
+  cd ~/.config/nvim/lua/custom/themes/
+  mv Forest.lua ~/.local/share/nvim/lazy/lualine.nvim/lua/lualine/themes/
+
+  # 完成安装，终端编辑器输入 nvim 查看效果
+  nvim 
+#+end_src
+
+**** III. polybar安装
+#+begin_src sh
+  sudo pacman -S polybar
+  
+  # 配置文件  
+  mkdir -p ~/.config/polybar
+  cp /polybar/config.ini ~/.config/polybar
+#+end_src
+
+**** IV. tmux安装
+#+begin_src sh
+  sudo pacman -S tmux
+  
+  # 安装tpm(tmux plugins manager)
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+  # 配置文件
+  cp /tmux/.tmux.conf ~/.tmux.conf
+
+  # 安装插件，直接按下 Ctrl-S + Shift + i 来安装 tmux 插件
+  Ctrl-S + Shift + i
+#+end_src
+
+**** V. wofi安装
+#+begin_src sh
+  sudo pacman -S wofi
+
+  # 配置文件
+  mkdir -p ~/.config/wofi/
+  cp /wofi/config ~/.config/wofi/
+  cp /wofi/style.css ~/.config/wofi/  
+#+end_src
+
+**** VI. Hyprland安装
+#+begin_src sh
+  sudo pacman -S hyprland
+
+  # 依赖安装
+  sudo pacman -S swww          # 壁纸工具
+  sudo pacman -S grim slurp    # 截图工具
+  sudo pacman -S brightnessctl # 屏幕亮度控制
+  sudo pacman -S playerctl     # 播放器
+
+  # 配置文件
+  mkdir -p ~/.config/hypr/
+  cp /hyprland/hyprland.conf ~/.config/hypr/
+  cp /hyprland/hyprlandAnime.png ~/.config/hypr/
+
+  # 然后注销，并在sddm选择要进入的窗管就行了。
+#+end_src
+
+** 3. 操作指南
+
+点击这里 [[file:res/tex/dotfiles.pdf][操作指南]] 查看更多使用帮助。

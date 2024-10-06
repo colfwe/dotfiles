@@ -6,8 +6,6 @@
 nnoremap('s', '<nop>')
 nnoremap('S', '<cmd>w<CR>')
 nnoremap('Q', '<cmd>q<CR>')
-nnoremap('<C-b>', '<cmd>w<CR>')
-nnoremap('<C-q>', '<cmd>q<CR>')
 nnoremap('sj', '<cmd>set splitbelow<CR><cmd>split<CR>')
 nnoremap('sk', '<cmd>set nosplitbelow<CR><cmd>split<CR>')
 nnoremap('sh', '<cmd>set nosplitright<CR><cmd>vsplit<CR>')
@@ -74,8 +72,8 @@ nnoremap('<leader>yx', '<cmd>Glow!<CR>')
 nnoremap('<leader>yt', '<cmd>TypstPreviewToggle<CR>')
 
 -- git chunk
-nnoremap("[h", "<cmd>require('gitsigns').next_hunk()")
-nnoremap("]h", "<cmd>require('gitsigns').prev_hunk()")
+nnoremap("[h", "<cmd>require('gitsigns').prev_hunk()")
+nnoremap("]h", "<cmd>require('gitsigns').next_hunk()")
 nnoremap("<leader>gh", "<cmd>require('gitsigns').setloclist()")
 nnoremap("<leader>gv", "<cmd>require('gitsigns').select_hunk()")
 
