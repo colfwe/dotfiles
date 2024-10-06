@@ -28,16 +28,6 @@
  pdfsubject={},
  pdfcreator={Emacs 31.0.50 (Org mode 9.7.11)}, 
  pdflang={English}}
-\usepackage{listings, color}
-\definecolor{verbgray}{gray}{0.9}
-\lstnewenvironment{code}{%
-  \lstset{backgroundcolor=\color{verbgray},
-    frame=single,
-    framerule=0pt,
-    basicstyle=\ttfamily,
-    columns=fullflexible}}{}
-\definecolor{shadecolor}{rgb}{.9,.9,.9}
-
 
 % 
 % 正文内容
@@ -90,14 +80,11 @@
     visual & leader C & 在可视模式下拷贝文本到剪贴板 \\
     normal & leader P & 在普通模式下粘贴文本到剪贴板 \\
     visual & leader P & 在普通模式下粘贴文本到剪贴板 \\
-    \hline \multicolumn{3}{|l|}{LSP语言服务器} \\ \hline                    
-    normal & leader l & 打开语言服务器提示功能 \\        
-    normal & leader pt & 开启texlab语言服务器 \\
-    normal & leader ot & 通过texlab构建文件 \\    
-    normal & leader pc & 开启clangd语言服务器 \\
-    normal & leader pl & 开启lua_ls语言服务器 \\
-    normal & leader pg & 开启gopls语言服务器 \\
-    normal & leader pr & 开启rust_analyzer语言服务器 \\
+    \hline \multicolumn{3}{|l|}{文本搜索Telescope} \\ \hline
+    normal & leader ff & 搜索当前路径下的文件 \\
+    normal & leader fg & 搜索当前路径下的文字 \\
+    normal & leader fb & 搜索当前路径下的缓冲区 \\
+    normal & leader ft & 打开帮助文档 \\    
     \hline
   \end{tabular}  
 \end{left}
@@ -116,11 +103,6 @@
     \hline \multicolumn{3}{|l|}{git区块(chunk)} \\ \hline
     normal & [h & 在普通模式下选中上一个chunk \\
     normal & ]h & 在普通模式下选中下一个chunk \\
-    \hline \multicolumn{3}{|l|}{文本搜索Telescope} \\ \hline
-    normal & leader ff & 搜索当前路径下的文件 \\
-    normal & leader fg & 搜索当前路径下的文字 \\
-    normal & leader fb & 搜索当前路径下的缓冲区 \\
-    normal & leader ft & 打开帮助文档 \\
     \hline \multicolumn{3}{|l|}{文件标签跳转BufferGoto} \\ \hline
     normal & leader 1 & 跳转到第一个文件标签Buffer \\
     normal & leader 2 & 跳转到第二个文件标签Buffer \\
@@ -151,6 +133,26 @@
     \hline \multicolumn{3}{|l|}{显示信息} \\ \hline                
     normal & leader il & 关闭缩进线显示 \\
     normal & leader b & 关闭文件上方导航信息(breadcrumb) \\
+    \hline \multicolumn{3}{|l|}{文件树} \\ \hline                
+    normal & M & 在左侧窗口打开文件树 \\
+    \hline \multicolumn{3}{|l|}{LSP语言服务器(通过:LspStart来打开功能)} \\ \hline                    
+    normal & leader l & 打开语言服务器提示功能 \\        
+    normal & leader pt & 开启texlab语言服务器 \\
+    normal & leader ot & 通过texlab构建文件 \\    
+    normal & leader pc & 开启clangd语言服务器 \\
+    normal & leader pl & 开启lua ls语言服务器 \\
+    normal & leader pg & 开启gopls语言服务器 \\
+    normal & leader pr & 开启rust_analyzer语言服务器 \\
+    normal & gD & 查看光标所在文本的声明declaration \\
+    normal & gd & 查看光标所在文本的定义definition \\
+    normal & gh & 悬浮光标所在文本的查看hover \\
+    normal & gi & 查看光标所在文本的实现implementation \\
+    normal & gk & 查看光标所在文本的署名signature \\
+    normal & gr & 查看光标所在文本的引用references \\
+    normal & leader ca & 进行代码行动code action \\
+    normal & leader ft & 进行代码格式化format(需格式化服务器) \\
+    normal & [d & 跳转到LS的上一个诊断 \\
+    normal & ]d & 跳转到LS的下一个诊断 \\    
     \hline
   \end{tabular}  
 \end{left}
