@@ -53,7 +53,30 @@
   sudo fc-cache -f
 #+end_src
 
-*** (3) 安装工具
+*** (3) 终端配色方案
+#+begin_src toml
+  [colors]
+  primary.background = "#2c2c2c"
+  primary.foreground = "#dcdcdc"
+  normal.black       = "#3F3F3F"
+  normal.red         = "#FD5760"
+  normal.green       = "#60B48A"
+  normal.yellow      = "#DFAF8F"
+  normal.blue        = "#9AB8D7"
+  normal.magenta     = "#DC8CC3"
+  normal.cyan        = "#8CD0D3"
+  normal.white       = "#DCDCDC"
+  bright.black       = "#709080"
+  bright.red         = "#DCA3A3"
+  bright.green       = "#72D5A3"
+  bright.yellow      = "#16F0BB"
+  bright.blue        = "#94BFF3"
+  bright.magenta     = "#EC93D3"
+  bright.cyan        = "#93E0E3"
+  bright.white       = "#FFFFFF"  
+#+end_src
+
+*** (4) 安装工具
 **** I. bash PS1 Prompt提示符
 #+begin_src sh
   # 配置文件
@@ -96,12 +119,15 @@
 **** IV. tmux安装
 #+begin_src sh
   sudo pacman -S tmux
-  
+
   # 安装tpm(tmux plugins manager)
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
   # 配置文件
   cp /tmux/.tmux.conf ~/.tmux.conf
+
+  # 进入tmux
+  tmux
 
   # 安装插件，直接按下 Ctrl-S + Shift + i 来安装 tmux 插件
   Ctrl-S + Shift + i
