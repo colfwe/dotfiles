@@ -1,0 +1,290 @@
+% Created 2024-10-07 一 00:07
+% Intended LaTeX compiler: pdflatex
+
+% 
+% 导言区
+% 
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\setmainfont{Noto Serif CJK TC}
+\setsansfont{Noto Sans CJK TC}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 31.0.50 (Org mode 9.7.11)}, 
+ pdflang={English}}
+
+% 
+% 正文内容
+% 
+\begin{document}
+
+\begin{titlepage}
+  \begin{center}
+    \vspace*{1cm} \textbf{说明文档} : 快捷键介绍 \vspace{0.5cm}
+    \vspace{0.5cm}  \\ \textbf{colfwe} \\ \vspace{5.5cm} \textbf{ArchLinux on Wayland} \vfill 2024-10-07 \vspace{0.8cm} \\
+    unix-porn \\ \LaTeX \\ \vspace{0.6cm}
+  \end{center}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage{}
+
+\section{neovim快捷键说明}
+\begin{left}
+  \begin{tabular}{|c|l|l|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{个人常用快捷键}} & \textbf{说明} \\   
+    \hline
+    编辑模式 & 按键 & 说明 \\
+    \hline \multicolumn{3}{|l|}{保存与退出} \\ \hline
+    leader leader & I & 使用lazy.nvim同步插件到最新 \\
+    normal & S & 保存文件 \\
+    normal & Q & 退出文件编辑 \\
+    \hline \multicolumn{3}{|l|}{分屏} \\ \hline    
+    normal & sh & 向左分屏 \\
+    normal & sj & 向下分屏 \\
+    normal & sk & 向上分屏 \\
+    normal & sl & 向右分屏 \\
+    \hline \multicolumn{3}{|l|}{光标移动} \\ \hline        
+    normal & J & 光标向下移动5行 \\
+    visual & J & 光标向下移动5行 \\    
+    normal & K & 光标向下移动5行 \\
+    visual & K & 光标向下移动5行 \\
+    normal & [w & 在普通模式下将光标当前行与上行对调位置 \\
+    normal & ]w & 在普通模式下将光标当前行与下行对调位置 \\
+    visual & [w & 在可视模式下将光标当前行与上行对调位置 \\
+    visual & ]w & 在可视模式下将光标当前行与下行对调位置 \\    
+    \hline \multicolumn{3}{|l|}{窗口调整} \\ \hline            
+    normal & up & 窗口向上调整5个单位大小 \\
+    normal & down & 窗口向下调整5个单位大小 \\
+    normal & left & 窗口向左调整5个单位大小 \\
+    normal & right & 窗口向右调整5个单位大小 \\
+    \hline \multicolumn{3}{|l|}{拷贝与粘贴} \\ \hline                
+    visual & leader C & 在可视模式下拷贝文本到剪贴板 \\
+    normal & leader P & 在普通模式下粘贴文本到剪贴板 \\
+    visual & leader P & 在普通模式下粘贴文本到剪贴板 \\
+    \hline \multicolumn{3}{|l|}{文本搜索Telescope} \\ \hline
+    normal & leader ff & 搜索当前路径下的文件 \\
+    normal & leader fg & 搜索当前路径下的文字 \\
+    normal & leader fb & 搜索当前路径下的缓冲区 \\
+    normal & leader ft & 打开帮助文档 \\    
+    \hline
+  \end{tabular}  
+\end{left}
+\begin{left}
+  \begin{tabular}{|c|l|l|}
+    \hline \multicolumn{3}{|l|}{项目管理} \\ \hline                        
+    normal & leader wl & 列出所有项目 \\
+    normal & leader wa & 添加当前路径的项目 \\
+    normal & leader wo & 打开某个项目 \\
+    normal & leader wm & 移出某个项目 \\
+    normal & leader wr & 为某个项目重命名 \\
+    \hline \multicolumn{3}{|l|}{预览文档} \\ \hline
+    normal & leader yt & 预览typst文档 \\    
+    normal & leader yp & 预览markdown文档 \\
+    normal & leader yx & 关闭预览markdown文档 \\
+    \hline \multicolumn{3}{|l|}{git区块(chunk)} \\ \hline
+    normal & [h & 在普通模式下选中上一个chunk \\
+    normal & ]h & 在普通模式下选中下一个chunk \\
+    \hline \multicolumn{3}{|l|}{文件标签跳转BufferGoto} \\ \hline
+    normal & leader 1 & 跳转到第一个文件标签Buffer \\
+    normal & leader 2 & 跳转到第二个文件标签Buffer \\
+    normal & leader 3 & 跳转到第三个文件标签Buffer \\
+    normal & leader 4 & 跳转到第四个文件标签Buffer \\
+    normal & leader 5 & 跳转到第五个文件标签Buffer \\
+    normal & leader 6 & 跳转到第六个文件标签Buffer \\
+    normal & leader 7 & 跳转到第七个文件标签Buffer \\
+    normal & leader 8 & 跳转到第八个文件标签Buffer \\
+    normal & leader 9 & 跳转到第九个文件标签Buffer \\
+    normal & leader xx & 关闭当前的正在处理的单个Buffer \\
+    normal & leader xh & 关闭当前的正在处理的左边所有的Buffer \\
+    normal & leader xl & 关闭当前的正在处理的右边所有的Buffer \\
+    \hline \multicolumn{3}{|l|}{大纲} \\ \hline
+    normal & leader s & 在右边窗口打开大纲 \\
+    \hline \multicolumn{3}{|l|}{浮动终端} \\ \hline
+    normal & leader tt & 在屏幕正中间打开1个浮动终端(通过ESC ESC Q来关闭) \\
+    \hline \multicolumn{3}{|l|}{其他} \\ \hline                    
+    terminal & ESC ESC & 在终端模式下从编辑模式切回普通模式 \\
+    insert & Ctrl-e & 输入二义字符(通过:digraph查看二义字符表) \\
+    normal & leader e & 开启粘贴paste模式 \\
+    normal & leader E & 关闭粘贴paste模式 \\    
+    \hline
+  \end{tabular}  
+\end{left}
+\begin{left}
+  \begin{tabular}{|c|l|l|}
+    \hline \multicolumn{3}{|l|}{显示信息} \\ \hline                
+    normal & leader il & 关闭缩进线显示 \\
+    normal & leader b & 关闭文件上方导航信息(breadcrumb) \\
+    \hline \multicolumn{3}{|l|}{文件树} \\ \hline                
+    normal & M & 在左侧窗口打开文件树 \\
+    \hline \multicolumn{3}{|l|}{LSP语言服务器(通过:LspStart来打开功能)} \\ \hline                    
+    normal & leader l & 打开语言服务器提示功能 \\        
+    normal & leader pt & 开启texlab语言服务器 \\
+    normal & leader ot & 通过texlab构建文件 \\    
+    normal & leader pc & 开启clangd语言服务器 \\
+    normal & leader pl & 开启lua ls语言服务器 \\
+    normal & leader pg & 开启gopls语言服务器 \\
+    normal & leader pr & 开启rust_analyzer语言服务器 \\
+    normal & gD & 查看光标所在文本的声明declaration \\
+    normal & gd & 查看光标所在文本的定义definition \\
+    normal & gh & 悬浮光标所在文本的查看hover \\
+    normal & gi & 查看光标所在文本的实现implementation \\
+    normal & gk & 查看光标所在文本的署名signature \\
+    normal & gr & 查看光标所在文本的引用references \\
+    normal & leader ca & 进行代码行动code action \\
+    normal & leader ft & 进行代码格式化format(需格式化服务器) \\
+    normal & [d & 跳转到LS的上一个诊断 \\
+    normal & ]d & 跳转到LS的下一个诊断 \\    
+    \hline
+  \end{tabular}  
+\end{left}
+
+\newpage{}
+
+\section{tmux快捷键说明}
+\begin{left}
+  \begin{tabular}{|c|l|l|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{个人常用快捷键}} & \textbf{说明} \\   
+    \hline
+    起始键PrefixKey & 按键 & 说明 \\
+    \hline \multicolumn{3}{|l|}{查看快捷键文档} \\ \hline
+    Ctrl-S & ? & 查看tmux快捷键文档 \\
+    \hline \multicolumn{3}{|l|}{窗口管理window} \\ \hline
+    Alt & 1 & 跳转到第一个window \\
+    Alt & 2 & 跳转到第二个window \\
+    Alt & 3 & 跳转到第三个window \\
+    Alt & 4 & 跳转到第四个window \\
+    Alt & 5 & 跳转到第五个window \\
+    Alt & 6 & 跳转到第六个window \\
+    Alt & 7 & 跳转到第七个window \\
+    Alt & 8 & 跳转到第八个window \\
+    Alt & 9 & 跳转到第九个window \\
+    Alt & f & 跳转到下一个window \\
+    Alt & b & 跳转到上一个window \\
+    Alt & n & 开启一个新的window \\
+    Alt & x & 关闭当前的window(输入y确定，输入n拒绝，输入Esc取消) \\
+    \hline \multicolumn{3}{|l|}{屏幕管理pane} \\ \hline
+    Ctrl-S Alt & k & 向上分屏pane \\
+    Ctrl-S Alt & j & 向下分屏pane \\
+    Ctrl-s Alt & h & 向左分屏pane \\
+    Ctrl-s Alt & l & 向右分屏pane \\    
+    Ctrl-s & Up & 当前屏pane向上调整距离 \\
+    Ctrl-s & Down & 当前屏pane向下调整距离 \\
+    Ctrl-s & Left  & 当前屏pane向左调整距离 \\
+    Ctrl-s & Right  & 当前屏pane向右调整距离 \\
+    \hline
+  \end{tabular}  
+\end{left}
+\begin{left}
+  \begin{tabular}{|c|l|l|}
+    \hline    
+    \multicolumn{2}{|c|}{\textbf{个人常用快捷键}} & \textbf{说明} \\   
+    \hline
+    起始键PrefixKey & 按键 & 说明 \\
+    \hline \multicolumn{3}{|l|}{光标跳转pane} \\ \hline    
+    Ctrl-S & k & 光标跳转到上边的pane \\
+    Ctrl-S & j & 光标跳转到下边的pane \\
+    Ctrl-s & h & 光标跳转到左边的pane \\
+    Ctrl-s & l & 光标跳转到右边的pane \\
+    Ctrl-s & 1 & 光标跳转到编号为1的pane \\
+    Ctrl-s & 2 & 光标跳转到编号为2的pane \\
+    Ctrl-s & 3 & 光标跳转到编号为3的pane \\
+    Ctrl-s & 4 & 光标跳转到编号为4的pane \\
+    Ctrl-s & 5 & 光标跳转到编号为5的pane \\
+    Ctrl-s & 6 & 光标跳转到编号为6的pane \\
+    Ctrl-s & 7 & 光标跳转到编号为7的pane \\
+    Ctrl-s & 8 & 光标跳转到编号为8的pane \\
+    Ctrl-s & 9 & 光标跳转到编号为9的pane \\
+    Ctrl-s & < & 当前pane，与左边的pane对调位置 \\
+    Ctrl-s & > & 当前pane，与右边的pane对调位置 \\    
+    \hline \multicolumn{3}{|l|}{会议管理session} \\ \hline
+    Ctrl-s & W & 查看tmux session会议 \\
+    Ctrl-s & S & 查看tmux session会议 \\
+    Ctrl-s & V & 查看tmux session会议 \\        
+    \hline
+  \end{tabular}  
+\end{left}
+\newpage{}
+
+\section{wofi快捷键说明}
+\begin{left}
+  \begin{tabular}{|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{个人常用快捷键}} & \textbf{说明} \\   
+    \hline
+    按键 & 说明 \\
+    \hline \multicolumn{2}{|l|}{光标移动} \\ \hline
+    Ctrl-j & 光标向下移动 \\
+    Ctrl-k & 光标向上移动 \\
+    \hline \multicolumn{2}{|l|}{退出wofi} \\ \hline    
+    ESC & 退出wofi \\    
+    \hline
+  \end{tabular}  
+\end{left}
+\newpage{}
+
+\section{Hyprland快捷键说明}
+\begin{left}
+  \begin{tabular}{|c|l|l|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{个人常用快捷键}} & \textbf{说明} \\   
+    \hline
+    起始键PrefixKey & 按键 & 说明(\text{\sout{$Hyprland窗管原神$}}) \\    
+    \hline \multicolumn{3}{|l|}{应用启动管理} \\ \hline
+    Super & O & 打开终端模拟器(konsole) \\
+    Super & Enter & 打开终端模拟器(konsole) \\
+    Super & I & 打开浏览器(firefox) \\
+    Super & A & 打开截图工具(grim slurp) \\
+    Super & M & 打开启动器(wofi) \\
+    \hline \multicolumn{3}{|l|}{窗口管理} \\ \hline
+    Super & E & 窗口伪全屏显示 \\
+    Super & T & 窗口浮动显示 \\
+    Super & J & 窗口垂直与水平切换来展示 \\
+    Super & S & 创建临时窗口 \\
+    Super Shift & S & 将当前窗口扔到临时窗口去 \\
+    Super & Backspace & 关闭当前窗口 \\    
+    Super & 鼠标左键 & 移动窗口的位置 \\
+    Super & 鼠标右键 & 跳转窗口的位置 \\    
+    \hline \multicolumn{3}{|l|}{光标跳转管理} \\ \hline
+    Super & K & 光标跳转到上边的窗口上 \\
+    Super & J & 光标跳转到下边的窗口上 \\
+    Super & H & 光标跳转到左边的窗口上 \\
+    Super & L & 光标跳转到右边的窗口上 \\
+    \hline \multicolumn{3}{|l|}{工作区管理} \\ \hline
+    Ctrl Super & 1 & 移动到第一个工作区上 \\
+    Ctrl Super & 2 & 移动到第二个工作区上 \\
+    Ctrl Super & 3 & 移动到第三个工作区上 \\
+    Ctrl Super & 4 & 移动到第四个工作区上 \\
+    Ctrl Super & 5 & 移动到第五个工作区上 \\
+    Ctrl Super & 6 & 移动到第六个工作区上 \\
+    Ctrl Super & 7 & 移动到第七个工作区上 \\
+    Ctrl Super & 8 & 移动到第八个工作区上 \\
+    Ctrl Super & 9 & 移动到第九个工作区上 \\
+    Ctrl Super & 0 & 移动到第十个工作区上 \\
+    Ctrl Super & Left & 移动到上一个工作区上 \\
+    Ctrl Super & Right & 移动到下一个工作区上 \\
+    鼠标滚轮向上滚 & 鼠标滚轮向上滚 & 移动到上一个工作区上 \\
+    鼠标滚轮向下滚 & 鼠标滚轮向下滚 & 移动到下一个工作区上 \\
+    \hline
+  \end{tabular}  
+\end{left}
+\end{document}
