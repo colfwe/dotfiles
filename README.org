@@ -80,8 +80,11 @@
 **** I. bash PS1 Prompt提示符
 #+begin_src sh
   # 配置文件
+  cd dotfiles    
   cp ~/.bash_profile ~/.bash_profile_backup
-  cp /bash/.bash_profile ~/.bash_profile
+  cp ~/.bashrc ~/.bashrc_backup
+  cp bash/.bash_profile ~/.bash_profile
+  cp bash/.bashrc ~/.bashrc
 #+end_src
 
 **** II. neovim安装
@@ -94,7 +97,8 @@
 
   # 配置文件
   mkdir -p ~/.config/nvim
-  cp -r /nvim/* ~/.config/nvim
+  cd dotfiles
+  cp -r nvim/* ~/.config/nvim
 
   # 然后等待安装
   nvim 
@@ -110,10 +114,11 @@
 **** III. polybar安装
 #+begin_src sh
   sudo pacman -S polybar
-  
-  # 配置文件  
+
+  # 配置文件
+  cd dotfiles      
   mkdir -p ~/.config/polybar
-  cp /polybar/config.ini ~/.config/polybar
+  cp polybar/config.ini ~/.config/polybar
 #+end_src
 
 **** IV. tmux安装
@@ -124,7 +129,8 @@
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
   # 配置文件
-  cp /tmux/.tmux.conf ~/.tmux.conf
+  cd dotfiles        
+  cp tmux/.tmux.conf ~/.tmux.conf
 
   # 进入tmux
   tmux
@@ -138,9 +144,10 @@
   sudo pacman -S wofi
 
   # 配置文件
+  cd dotfiles        
   mkdir -p ~/.config/wofi/
-  cp /wofi/config ~/.config/wofi/
-  cp /wofi/style.css ~/.config/wofi/  
+  cp wofi/config ~/.config/wofi/
+  cp wofi/style.css ~/.config/wofi/  
 #+end_src
 
 **** VI. Hyprland安装
@@ -154,9 +161,10 @@
   sudo pacman -S playerctl     # 播放器
 
   # 配置文件
+  cd dotfiles          
   mkdir -p ~/.config/hypr/
-  cp /hyprland/hyprland.conf ~/.config/hypr/
-  cp /hyprland/hyprlandAnime.png ~/.config/hypr/
+  cp hyprland/hyprland.conf ~/.config/hypr/
+  cp hyprland/hyprlandAnime.png ~/.config/hypr/
 
   # 然后注销，并在sddm选择要进入的窗管就行了。
 #+end_src
